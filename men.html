@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a32e0d7f5c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Women</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="overflow-x-hidden bg-red-50">
+    <header class="flex flex-row justify-between px-0.5 bg-white h-24">
+        <div class="flex flex-row items-center"> 
+            <i class="fa-solid fa-bag-shopping text-4xl" style="color: orangered;"></i>
+            <h1 class="text-4xl font-bold">CLOJEWLS</h1>
+        </div>
+    
+        
+            <ul class="hidden md:flex flex items-center gap-6">
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="index.html">Shop</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="women.html">Women</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="men.html">Men</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="jewellery.html">Jewellery</a></li>
+            </ul> 
+
+            <div class="hidden md:flex flex items-center gap-6">
+                <button id="loginButton" class="bg-orange-500 rounded-full w-32 h-10 text-white hover:bg-white hover:text-black hover:shadow-md">Login</button>
+                <div class="relative">
+                    <i id="cartIcon" class="fa-solid fa-cart-shopping text-3xl"></i>
+                    <span id="" class="cartCount absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">0</span>
+                </div>
+            </div>
+
+            <div  class="md:hidden pt-6">
+                <i  id="menu-toggle" name="menu" class="fa-solid fa-bars text-3xl md:hidden"></i>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden bg-red-50 hidden w-2/5 h-fit" style="z-index: 9999;">
+                <div class="flex flex-col items-center py-8"> <!-- Align items in a column -->
+                    <!-- Exit Button -->
+                    <button id="exit-btn" class="text-black focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="container mx-auto mt-2 flex flex-col items-center"> <!-- Align items in a column -->
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="index.html">Shop</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="women.html">Women</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="men.html">Men</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="jewellery.html">Jewellery</a>
+                        <button id="loginButton" class="border border-black w-16 rounded-full hover:bg-red-50 mt-2">Login</button> <!-- Adjust spacing -->
+                        <i class="fa-solid fa-cart-shopping text-3xl mt-2"></i> <!-- Adjust spacing -->
+                    </div>
+                </div>
+            </div>
+            
+            
+        </header>
+        <section class="bg-gradient-to-r from-red-300 mt-4 mx-4 flex justify-between items-center">
+            <div class="p-8">
+                <h1 class="text-4xl font-bold text-orange-500">FLAT 50% OFF</h1>
+                <p class="md:text-[32px] text-1xl">
+                    <span class="text-orange-500">10</span> <span>Hours</span> <span class="text-orange-500">30</span> <span>Mins</span>
+                </p>
+                <button class="explore bg-orange-500 rounded-full w-32 h-10 text-white hover:bg-white hover:text-black hover:shadow-md">Explore Now</button>
+            </div>
+            <img src="./images/banner-image2-removebg-preview.png" alt="Image" style="height: 190px; width: 210px;">
+        </section>
+
+        <section class="mt-6">
+            
+                <div class="flex justify-center items-center mt-6">
+                    <input id="searchInput"  placeholder="Search..." class="rounded-l-lg px-4 py-2 border border-gray-300 focus:outline-none focus:border-black">
+                    <button id="searchButton"  class="rounded-r-lg px-4 py-2 bg-black text-white hover:bg-white hover:text-black hover:shadow-md">Search</button>
+                </div>
+            
+        </section>
+
+        <section class="bg-red-50">
+             <div class="container mx-auto p-4">
+                <div class="men grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <!--display all products in the men's category-->
+                </div>
+            </div>
+    
+        </section>
+        <section class="mt-6">
+            <div class="flex justify-center items-center mt-4 flex flex-col">
+                <button class="explore bg-orange-500 rounded-full w-32 h-10 text-white hover:bg-white hover:text-black hover:shadow-md">Explore More</button>
+               
+            </div>
+        </section>
+        <footer class="bg-red-100 mt-6 shadow-md rounded-md">
+            <div class="flex justify-center items-center mt-4 flex flex-col">
+                <p class="text-sm md:text-base lg:text-lg mt-6 text-gray-600">Subscribe to our newsletter to stay updated!</p>
+                <div class="flex items-center mt-6">
+                    <input type="email" placeholder="Enter your email" class="rounded-l-lg px-4 py-2 border border-gray-300 focus:outline-none focus:border-black">
+                    <button type="submit" class="rounded-r-lg px-4 py-2 bg-black text-white hover:bg-white hover:text-black hover:shadow-md">Subscribe</button>
+                </div>
+                <div class="flex flex-row items-center mt-12"> 
+                    <i class="fa-solid fa-bag-shopping text-2xl" style="color: orangered;"></i>
+                    <h1 class="text-2xl font-bold">CLOJEWLS</h1>
+                </div>
+                <ul class="md:flex flex items-center gap-6 mt-4">
+                    <li><a class="hover:border-b border-transparent hover:border-red-300 text-gray-600" href="#">Company</a></li>
+                    <li><a class="hover:border-b border-transparent hover:border-red-300 text-gray-600" href="#">Shop</a></li>
+                    <li><a class="hover:border-b border-transparent hover:border-red-300 text-gray-600" href="#">About</a></li>
+                    <li><a class="hover:border-b border-transparent hover:border-red-300 text-gray-600" href="#">Contact</a></li>
+                </ul>
+                <div class="md:flex flex items-center gap-6 mt-4 mb-4">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    
+                </div>
+            </div>
+        </footer>
+        <div class="flex justify-center items-center text-gray-600">
+            <p>Copyright <i class="fa-solid fa-at"></i> 2023 - All Rights Reserved.</p>
+        </div>
+        
+        
+        
+        <script type="module" src="./index.js"></script>
+
+</body>
+</html>
