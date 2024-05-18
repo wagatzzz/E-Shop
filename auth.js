@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Login form submission event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // Login form submission event listener
+  
     document.getElementById('login-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
