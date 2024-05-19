@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a32e0d7f5c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        /* Custom CSS */
+        #productImage{
+            width: 200px; 
+            height: 200px; 
+
+        }
+        .image-container {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+    </style>
+</head>
+<body class="bg-red-50 overflow-x-hidden md:overflow-y-hidden">
+    <header class="flex flex-row justify-between px-0.5 bg-white h-24">
+        <div class="flex flex-row items-center"> 
+            <i class="fa-solid fa-bag-shopping text-4xl" style="color: orangered;"></i>
+            <h1 class="text-4xl font-bold">CLOJEWLS</h1>
+        </div>
+    
+        
+            <ul class="hidden md:flex flex items-center gap-6">
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="index.html">Shop</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="women.html">Women</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="men.html">Men</a></li>
+                <li><a class="hover:border-b border-transparent hover:border-red-300" href="jewellery.html">Jewellery</a></li>
+            </ul> 
+
+            <div class="hidden md:flex flex items-center gap-6">
+                <button id="loginButton" class="bg-orange-500 rounded-full w-32 h-10 text-white hover:bg-white hover:text-black hover:shadow-md">Login</button>
+                <div class="relative">
+                    <i id="cartIcon" class="fa-solid fa-cart-shopping text-3xl"></i>
+                    <span id="" class="cartCount absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">0</span>
+                </div>
+                
+            </div>
+
+            <div  class="md:hidden pt-6">
+                <i  id="menu-toggle" name="menu" class="fa-solid fa-bars text-3xl md:hidden"></i>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden bg-red-50 hidden w-2/5 h-fit" style="z-index: 9999;">
+                <div class="flex flex-col items-center py-8"> 
+                    <!-- Exit Button -->
+                    <button id="exit-btn" class="text-black focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="container mx-auto mt-2 flex flex-col items-center"> 
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="index.html">Shop</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="women.html">Women</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="men.html">Men</a>
+                        <a class="hover:border-b border-transparent hover:border-red-300" href="jewellery.html">Jewellery</a>
+                        <button id="loginButton" class="border border-black w-16 rounded-full hover:bg-red-50 mt-2">Login</button> <!-- Adjust spacing -->
+                        <i class="fa-solid fa-cart-shopping text-3xl mt-2"></i> 
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+
+        <section class="flex justify-center items-center h-screen">
+            <div class="bg-white p-2 md:p-4 rounded-lg shadow-md max-w-screen-lg flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0 w-full">
+                <div class="w-full md:w-1/3">
+                   
+                    <div class="image-container">
+                        <img id="productImage" src="" alt="">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 flex flex-col justify-between">
+                    <div>
+                        <h2 id="productTitle" class="md:text-[18px] font-bold"></h2>
+                        <p id="productDescription" class="text-sm text-gray-600 mb-8"></p>
+                    </div>
+                    <div class="flex flex-col ">
+                        <div class="flex flex-row">
+                            <div id="productRating" class="flex flex-row">
+                                
+                            </div>
+                            <p id="ratingCount" class="text-gray-500"></p>
+                        </div>
+                        <div class="">
+                            <p id="productPrice" class="text-lg text-orange-500"></p>
+                            <p id="productCategory" class="text-gray-800"></p>
+                        </div>
+                    </div>
+                    <button id="addToCartBtn" type="submit" class="addToCartBtn rounded px-4 py-2 bg-orange-500 text-white hover:bg-white hover:text-black hover:shadow-md w-full md:w-auto">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        
+        
+ <script src="index.js"></script> 
+ <script>
+    //  query parameters from URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    // Get product information from query parameters
+    const title = urlParams.get('title');
+    const description = urlParams.get('description');
+    const price = urlParams.get('price');
+    const image = urlParams.get('image');
+    const category = urlParams.get('category');
+    const ratingCount = urlParams.get('ratingCount');
+    const count = urlParams.get('count');
+
+    // Populate HTML elements with product information
+    document.getElementById('productImage').src = image;
+    document.getElementById('productTitle').textContent = title;
+    document.getElementById('productDescription').textContent = description;
+    document.getElementById('productPrice').textContent = `$${price}`;
+    document.getElementById('productCategory').textContent = category;
+    document.getElementById('ratingCount').textContent = `(${count})`;
+
+    
+   
+    // Function to generate star icons based on rating count
+    function generateStars(ratingCount) {
+                const stars = [];
+                const fullStars = Math.floor(ratingCount);
+                const halfStars = ratingCount - fullStars >= 0.5 ? 1 : 0;
+                const emptyStars = 5 - fullStars - halfStars;
+
+                for (let i = 0; i < fullStars; i++) {
+                    stars.push('<i class="fa-solid fa-star text-yellow-500"></i>');
+                }
+
+                if (halfStars === 1) {
+                    stars.push('<i class="fa-solid fa-star-half-alt text-yellow-500"></i>');
+                }
+
+                for (let i = 0; i < emptyStars; i++) {
+                    stars.push('<i class="fa-regular fa-star text-gray-400"></i>');
+                }
+
+                return stars.join('');
+            }
+            const ratingStarsElement = document.getElementById('productRating');
+            ratingStarsElement.innerHTML = generateStars(ratingCount);
+
+
+
+</script>  
+</body>
+</html>
